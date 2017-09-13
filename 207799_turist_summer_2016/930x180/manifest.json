@@ -1,0 +1,20 @@
+{
+    "version": "1.0",
+
+    "title": "930x180", 
+    "description": "",  
+
+    "width" : "930", 
+    "height": "180", 
+
+    "events": {
+        "enabled": 1, 
+        "list": { }
+    },
+
+    "clicktags": {
+        "clickTAG": "http://www.adform.com"
+    },
+
+    "source": "930x180.html"
+}

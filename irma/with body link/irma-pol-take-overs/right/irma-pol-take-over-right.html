@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gekko</title>
+<!--Adform Global Clicktag START-->
+<script type="text/javascript">
+    document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+    function adfOpenGlobalClickTAG() {
+        var adfClickTAGName = 'clickTAG',
+            adfClickTAGvalue = dhtml.getVar(adfClickTAGName, 'https://irma.dk/medlem'),
+            adfLandingpageTarget = dhtml.getVar('landingPageTarget', '_blank');
+        window.open(adfClickTAGvalue, adfLandingpageTarget);
+    }
+    if(window.addEventListener) {
+        window.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            adfOpenGlobalClickTAG();
+        }, true);
+    } else {
+        document.attachEvent('onclick', function() {
+            adfOpenGlobalClickTAG();
+        });
+    }
+</script>
+<!--Adform Global Clicktag END-->
+</head>
+<body style="margin:0;padding:0; background:#fff;"><a href="https://irma.dk/medlem" target="_blank">
+<style>
+* { cursor: pointer;}
+.right {
+	width: 140px;
+	height: 600px;
+	float: left;
+	background: url(img/bg.jpg) right no-repeat
+}
+div#slider3_container>div {
+	background: url(img/irma.png) bottom center no-repeat
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<script type="text/javascript" src="js/jssor.slider.mini.js"></script> 
+<script>jQuery(document).ready(function($){function a(){var $=t.$Elmt.parentNode.clientWidth;$?t.$ScaleWidth(Math.max(Math.min($,140),140)):window.setTimeout(a,30)}var i=[{$Duration:100,$Opacity:1,$Brother:{$Duration:100,$Opacity:1}}],n=[];n.L={$Duration:900,x:.6,$Easing:{$Left:$JssorEasing$.$EaseInOutSine},$Opacity:2},n.R={$Duration:900,x:-.6,$Easing:{$Left:$JssorEasing$.$EaseInOutSine},$Opacity:2},n["R|IB"]={$Duration:800,x:-.6,$Easing:{$Left:$JssorEasing$.$EaseInOutBack},$Opacity:2},n["RTT|360"]={$Duration:900,$Rotate:1,$Easing:{$Opacity:$JssorEasing$.$EaseLinear,$Rotate:$JssorEasing$.$EaseInQuad},$Opacity:2},n["RTT|10"]={$Duration:900,$Zoom:11,$Rotate:1,$Easing:{$Zoom:$JssorEasing$.$EaseInExpo,$Opacity:$JssorEasing$.$EaseLinear,$Rotate:$JssorEasing$.$EaseInExpo},$Opacity:2,$Round:{$Rotate:.8}},n["ZMF|10"]={$Duration:900,$Zoom:11,$Easing:{$Zoom:$JssorEasing$.$EaseInExpo,$Opacity:$JssorEasing$.$EaseLinear},$Opacity:2},n.FADE={$Duration:900,$Opacity:2},n["FADE|10"]={$Duration:2e3,$Opacity:2};var o={$AutoPlay:!0,$AutoPlaySteps:1,$AutoPlayInterval:1e3,$PauseOnHover:1,$StartIndex:0,$ArrowKeyNavigation:!1,$SlideEasing:$JssorEasing$.$EaseOutQuint,$SlideDuration:800,$MinDragOffsetToSlide:20,$SlideSpacing:0,$DisplayPieces:1,$ParkingPosition:0,$UISearchMode:1,$PlayOrientation:1,$DragOrientation:0,$SlideshowOptions:{$Class:$JssorSlideshowRunner$,$Transitions:i,$TransitionsOrder:1,$ShowLink:!0},$CaptionSliderOptions:{$Class:$JssorCaptionSlider$,$CaptionTransitions:n,$PlayInMode:1,$PlayOutMode:3},$ArrowNavigatorOptions:{$Class:$JssorArrowNavigator$,$ChanceToShow:1,$AutoCenter:2,$Steps:1},$BulletNavigatorOptions:{$Class:$JssorBulletNavigator$,$ChanceToShow:2,$AutoCenter:1,$Steps:1,$Lanes:1,$SpacingX:4,$SpacingY:4,$Orientation:1}},t=new $JssorSlider$("slider3_container",o);a(),$(window).bind("load",a),$(window).bind("resize",a),$(window).bind("orientationchange",a)});</script>
+  <div class="right">
+    <div id="slider3_container" style="position: relative; width: 140px; height: 600px; overflow: hidden;">
+      <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 140px; height: 600px; overflow: hidden;">
+        <div>
+          <div u=caption t="FADE" t2="L" du="4800" > </div>
+        </div>
+        <div>
+          <div u=caption t="R" t2="FADE|10" du="1000" class="" style="position:absolute; left:-50px; top: 130px; width:140px; height:369px;"> <a href="#" target="_blank"> <img u="image" src="img/mad-glade-right.png" /> </a> 
+		  </div>
+		  <div u=caption t="FADE" t2="FADE" du="2200" class=""> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a></body></html>

@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gekko</title>
+</head>
+<body style="margin:0;padding:0; background:#fff;">
+<style>
+    @font-face {
+    font-family: 'nexa_lightregular';
+    src: url('font/nexa_light.eot');
+    src: url('font/nexa_light.eot?#iefix') format('embedded-opentype'),
+         url('font/nexa_light.woff2') format('woff2'),
+         url('font/nexa_light.woff') format('woff'),
+         url('font/nexa_light.ttf') format('truetype'),
+         url('font/nexa_light.svg#nexa_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   }
+   @font-face {
+    font-family: 'nexa_boldregular';
+    src: url('font/nexa_bold.eot');
+    src: url('font/nexa_bold.eot?#iefix') format('embedded-opentype'),
+         url('font/nexa_bold.woff2') format('woff2'),
+         url('font/nexa_bold.woff') format('woff'),
+         url('font/nexa_bold.ttf') format('truetype'),
+         url('font/nexa_bold.svg#nexa_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+    span.grnText {
+        color: #1da65e;
+    }
+    .captionTitle {
+        font-family: 'nexa_lightregular';
+        font-size: 19px;
+        line-height: 1.3;
+        text-align: center;
+    }
+    .captionTitle1 {
+        font-family: 'nexa_boldregular';
+        font-size: 22px;
+        line-height: 1.4;
+        text-align: center;
+    }
+    .captionTitle2 {
+        font-family: 'nexa_lightregular';
+        line-height: 1.3;
+        font-size: 23px;
+        text-align: center;
+    }
+    .type-wrap {
+        margin: 10px auto;
+        padding: 20px;
+        background: #f0f0f0;
+        border-radius: 5px;
+        border: #CCC 1px solid;
+    }
+    div#slider1_container> div {
+    background: url( img/bg.jpg);
+}
+    /* code for animated blinking cursor */
+    
+    .typed-cursor {
+        opacity: 1;
+        font-weight: 100;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        -ms-animation: blink 0.7s infinite;
+        -o-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+    @-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-ms-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-o-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<script type="text/javascript" src="js/jssor.slider.mini.js"></script> 
+<script>
+        jQuery(document).ready(function($) {
+
+            var _SlideshowTransitions = [
+                {$Duration:100,$Opacity:1,$Brother:{$Duration:100,$Opacity:1}}
+            ];
+
+            var _CaptionTransitions = [];
+            _CaptionTransitions["L"] = {
+                $Duration: 900,
+                x: 0.6,
+                $Easing: {
+                    $Left: $JssorEasing$.$EaseInOutSine
+                },
+                $Opacity: 2
+            };
+            _CaptionTransitions["R|IB"] = {
+                $Duration: 800,
+                x: -0.6,
+                $Easing: {
+                    $Left: $JssorEasing$.$EaseInOutBack
+                },
+                $Opacity: 2
+            };
+            _CaptionTransitions["RTT|360"] = {
+                $Duration: 900,
+                $Rotate: 1,
+                $Easing: {
+                    $Opacity: $JssorEasing$.$EaseLinear,
+                    $Rotate: $JssorEasing$.$EaseInQuad
+                },
+                $Opacity: 2
+            };
+            _CaptionTransitions["RTT|10"] = {
+                $Duration: 900,
+                $Zoom: 11,
+                $Rotate: 1,
+                $Easing: {
+                    $Zoom: $JssorEasing$.$EaseInExpo,
+                    $Opacity: $JssorEasing$.$EaseLinear,
+                    $Rotate: $JssorEasing$.$EaseInExpo
+                },
+                $Opacity: 2,
+                $Round: {
+                    $Rotate: 0.8
+                }
+            };
+            _CaptionTransitions["ZMF|10"] = {
+                $Duration: 900,
+                $Zoom: 11,
+                $Easing: {
+                    $Zoom: $JssorEasing$.$EaseInExpo,
+                    $Opacity: $JssorEasing$.$EaseLinear
+                },
+                $Opacity: 2
+            };
+            _CaptionTransitions["FADE"] = {
+                $Duration: 900,
+                $Opacity: 2
+            };
+            _CaptionTransitions["FADE|C"] = {
+                $Duration: 100,
+                $Opacity: 1
+            };
+
+            var options = {
+                $AutoPlay: true, //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1, //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 1000, //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1, //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+                $StartIndex:0,
+                $ArrowKeyNavigation: false, //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint, //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 800, //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20, //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1, //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0, //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1, //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1, //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 0, //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $SlideshowOptions: { //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$, //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions, //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1, //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+                 
+                $CaptionSliderOptions: { //[Optional] Options which specifies how to animate caption
+                    $Class: $JssorCaptionSlider$, //[Required] Class to create instance to animate caption
+                    $CaptionTransitions: _CaptionTransitions, //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
+                    $PlayInMode: 1, //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
+                    $PlayOutMode: 3 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
+                },
+
+                $ArrowNavigatorOptions: { //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$, //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1, //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2, //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1 //[Optional] Steps to go for each navigation request, default value is 1
+                },
+
+                $BulletNavigatorOptions: { //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$, //[Required] Class to create navigator instance
+                    $ChanceToShow: 2, //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1, //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1, //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1, //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 4, //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 4, //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+ 
+            //responsive code begin
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$ScaleWidth(Math.max(Math.min(parentWidth, 300), 270));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+</script>
+<div id="slider1_container" style="position: relative; width: 300px; height: 250px; overflow: hidden;">
+  <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 300px; height: 250px; overflow: hidden;">
+    <div>  
+      <div u=caption t="FADE|C"  t2="FADE" du="1000" class="" style="position:absolute; left:0; top: 20px; width:300px; height:195px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-1.png" /> </a> </div>
+    </div>
+    <div>  
+      <div u=caption t="FADE" t2="L" du="1000" class="" style="position:absolute; left: 25px; top: 0; width:130px; height:100px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-2.png" /> </a> </div>
+      <div u=caption t="L" t2="FADE" d="-600" class="captionTitle" style="position:absolute; left:40px; top: 138px; width:200px; height:40px;"> HAR DU SMAG FOR MEDLEMSFORDELE? </div>
+      <div u=caption t="L" t2="FADE" d="-700" class="captionTitle1" style="position:absolute; left:40px; top: 187px; width:200px; height:70px;">SÅ MELD DIG IND I DIN IRMA </div>
+    </div>
+    <div> 
+      <div u=caption t="FADE" t2="L" du="1000" class="" style="position:absolute; left:10px; top: 0; width:130px; height:100px;"> <a href="#" target="_blank"> <img u="image" src="img/mad-glade.png" /> </a> </div>
+      <div u=caption t="FADE" t2="FADE" d="-600" class="captionTitle2" style="position:absolute; left:25px; top: 160px; width: 240px; height:61px;"> BLIV MEDLEM NU OG FÅ EN EKSKLUSIV KOGEBOG </div>
+    </div>
+    <div> 
+      <div u=caption t="FADE" t2="FADE" du="1000" class="captionTitle" style="position:absolute; left:8px; top:150px; width:285px; height:61px;"> SE MEDLEMSFORDELENE OG </div>
+      <div u=caption t="FADE" t2="FADE" du="1000" class="" style="position:absolute; left:60px; top: 175px; width:123px; height:112px; text-align: left;"> <a href="#" target="_blank"> <img u="image" src="img/meld.png" /> </a> </div>
+      <div u=caption t="L" t2="FADE" d="-200" du="1000" class="" style="position:absolute; left: 25px; top: 0; width:130px; height:100px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-2.png" /> </a> </div>
+      <div u=caption t="L" t2="FADE" d="-350" du="1000" class="" style="position:absolute; left:85px; top: 210px; width:142px; height:25px;"> <a href="#" target="_blank"> <img u="image" src="img/irma.png" /> </a> </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

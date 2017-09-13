@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<adf>
+    <banner>
+        <details>
+            <uniqueId>bd2d1787adc9079fae8b51b0a9fd5c737</uniqueId>
+            <format>Standard</format>
+            <name>Standard</name>
+            <events>1</events>
+        </details>
+        <settings>
+            <landingPageTarget>_blank</landingPageTarget>
+        </settings>
+        <assets>
+            <asset>
+                <sourceType>src</sourceType>
+                <fileName>Mainasset.a9dd4f78c90d1ab6f802be6c42d41e978.zip</fileName>
+                <clickTagNames>
+                    <clickTagName>clickTAG</clickTagName>
+                </clickTagNames>
+                <eventIds/>
+            </asset>
+        </assets>
+        <bannerClickTags>
+            <bannerClickTag name="clickTAG" displayName="clickTAG">
+                <![CDATA[http://www.bordingvista.com/en/]]>
+            </bannerClickTag>
+        </bannerClickTags>
+        <bannerEvents/>
+    </banner>
+</adf>

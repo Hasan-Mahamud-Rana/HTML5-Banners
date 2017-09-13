@@ -1,0 +1,114 @@
+
+{
+
+	"HTMLFileName":"animation-1.html",
+	"pref__general__AutoKeyframeProperties":"true",
+	"ModelData":"{\
+\"stage\": {\
+   \"timelines\": {\
+      \"Default Timeline\": {\
+      }\
+   }},\
+\"Preloader\": {\
+   \"timelines\": {\
+\
+   }},\
+\"Down-level\": {\
+   \"timelines\": {\
+\
+   }}\
+}",
+	"expanded:images/asp-net.png":"nil",
+	"pref__general__FilterNonAnimatedElements":"false",
+	"expanded:images/java-logo.png":"nil",
+	"viewStartMs":"22735",
+	"pref__general__AutoKeyframePropertiesArmed":"false",
+	"expanded:images/Android.png":"nil",
+	"symbol_stage":{
+		"element_${Welcome}":{
+			"timelineColor2":"0x4fa275",
+			"timelineColor3":"0x456a55",
+			"timelineColor":"0x50bd82",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true",
+			"invisible":"false"},
+		"dummyStageParentWidth":"550px",
+		"element_${TextCopy}":{
+			"timelineColor2":"0x4fa275",
+			"timelineColor3":"0x456a55",
+			"timelineColor":"0x50bd82"},
+		"dummyStageParentHeight":"400px",
+		"element_${java-logo2}":{
+			"timelineColor2":"0x1095d2",
+			"timelineColor3":"0x29647e",
+			"animationEnabled":"false",
+			"timelineColor":"0x00a9fa"},
+		"element_${Android}":{
+			"timelineColor2":"0xd35d6e",
+			"timelineColor3":"0x7e4b52",
+			"timelineColor":"0xfb657a",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${java-logo}":{
+			"timelineColor2":"0x326a96",
+			"timelineColor3":"0x385063",
+			"timelineColor":"0x2f73ad",
+			"timelineTreeOpened":"true",
+			"animationEnabled":"false",
+			"usingMotionPaths":"false"},
+		"element_${php_logo}":{
+			"timelineColor2":"0xb099ce",
+			"timelineColor3":"0x70657c",
+			"timelineColor":"0xceaef4",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${what_we_do}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"timelineColor":"0xeedf79",
+			"timelineTreeOpened":"true",
+			"animationEnabled":"true",
+			"locked":"false",
+			"invisible":"false"},
+		"defaultStageParentHeight":"400px",
+		"element_${asp-net}":{
+			"timelineColor2":"0x5a558a",
+			"timelineColor3":"0x4a485e",
+			"timelineColor":"0x63599f",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${Stage}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"timelineTreeOpened":"true",
+			"timelineColor":"0xeedf79"},
+		"defaultStageParentWidth":"550px",
+		"element_${java-logo3}":{
+			"timelineColor2":"0x81aa62",
+			"timelineColor3":"0x5b6c4d",
+			"timelineColor":"0x91c767",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true",
+			"invisible":"false"},
+		"element_${Group}":{
+			"timelineColor2":"0x168c84",
+			"timelineColor3":"0x2a605c",
+			"timelineTreeOpened":"true",
+			"timelineColor":"0x00a096"},
+		"element_${BordingVista}":{
+			"timelineColor2":"0xba5b89",
+			"timelineColor3":"0x734a5f",
+			"animationEnabled":"true",
+			"timelineColor":"0xdb619d"}},
+	"TransitionIdCounter":"110",
+	"CompZoomFactor":"100",
+	"viewStartY":"0",
+	"pixelsPerMs":"0.2",
+	"expanded:images/BordingVista.png":"nil",
+	"expanded:images/php_logo.png":"nil",
+	"usedBOM":"false",
+	"nextElementColorIndex":"13",
+	"stage-Default Timeline_playhead_ms":"26960",
+	"pref__general__GenerateSmoothTransitions":"true",
+	"StageZoomFactor":"100",
+	"stage-Default Timeline_mark_ms":"-1"}

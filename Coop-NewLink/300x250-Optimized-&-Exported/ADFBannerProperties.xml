@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<adf>
+  <banner>
+    <details>
+      <uniqueId>b34e4bc2daba3f232d58f5d2bb156351e</uniqueId>
+      <format>Standard</format>
+      <name>Standard</name>
+      <events>1</events>
+    </details>
+    <settings>
+      <landingPageTarget>_blank</landingPageTarget>
+    </settings>
+    <assets>
+      <asset>
+        <sourceType>src</sourceType>
+        <fileName>Main assetae101914465d5ab2f42662be7af349f53</fileName>
+        <clickTagNames>
+          <clickTagName>clickTAG1</clickTagName>
+          <clickTagName>clickTAG2</clickTagName>
+          <clickTagName>clickTAG3</clickTagName>
+          <clickTagName>clickTAG4</clickTagName>
+          <clickTagName>clickTAG5</clickTagName>
+          <clickTagName>clickTAG6</clickTagName>
+        </clickTagNames>
+        <eventIds/>
+      </asset>
+    </assets>
+    <bannerClickTags>
+      <bannerClickTag name="clickTAG1" displayName="clickTAG1"><![CDATA[http://www.blivcoopmedlemnu.dk/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_300x250]]></bannerClickTag>
+      <bannerClickTag name="clickTAG2" displayName="clickTAG2"><![CDATA[http://www.blivcoopmedlemnu.dk/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_300x250]]></bannerClickTag>
+      <bannerClickTag name="clickTAG3" displayName="clickTAG3"><![CDATA[http://www.blivcoopmedlemnu.dk/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_300x250]]></bannerClickTag>
+      <bannerClickTag name="clickTAG4" displayName="clickTAG4"><![CDATA[http://www.blivcoopmedlemnu.dk/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_300x250]]></bannerClickTag>
+      <bannerClickTag name="clickTAG5" displayName="clickTAG5"><![CDATA[http://www.blivcoopmedlemnu.dk/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_300x250]]></bannerClickTag>
+      <bannerClickTag name="clickTAG6" displayName="clickTAG6"><![CDATA[http://www.blivcoopmedlemnu.dk/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_300x250]]></bannerClickTag>
+    </bannerClickTags>
+    <bannerEvents/>
+    <variables/>
+  </banner>
+</adf>

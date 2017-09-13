@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gekko</title>
+</head>
+<body style="margin:0;padding:0; background:#fff;">
+<style>@font-face{font-family:nexa_lightregular;src:url(font/nexa_light.eot);src:url(font/nexa_light.eot?#iefix) format('embedded-opentype'),url(font/nexa_light.woff2) format('woff2'),url(font/nexa_light.woff) format('woff'),url(font/nexa_light.ttf) format('truetype'),url(font/nexa_light.svg#nexa_lightregular) format('svg');font-weight:400;font-style:normal}@font-face{font-family:nexa_boldregular;src:url(font/nexa_bold.eot);src:url(font/nexa_bold.eot?#iefix) format('embedded-opentype'),url(font/nexa_bold.woff2) format('woff2'),url(font/nexa_bold.woff) format('woff'),url(font/nexa_bold.ttf) format('truetype'),url(font/nexa_bold.svg#nexa_boldregular) format('svg');font-weight:400;font-style:normal}.wrapper{width:2560px;height:1440px;background:url(img/bg.jpg) top center no-repeat}.top{width:960px;height:180px;margin:0 auto}span.grnText{color:#1da65e}.captionTitle{font-family:nexa_lightregular;font-size:30px;line-height:1.4}.captionTitle1{font-family:nexa_boldregular;font-size:43px;line-height:1.4}.captionTitle2{font-family:nexa_lightregular;line-height:1.4;font-size:38px;text-align:center}.type-wrap{margin:10px auto;padding:20px;background:#f0f0f0;border-radius:5px;border:1px solid #CCC}div#slider2_container>div,div#slider3_container>div{background:url(img/irma.png) bottom center no-repeat}.typed-cursor{opacity:1;font-weight:100;-webkit-animation:blink .7s infinite;-moz-animation:blink .7s infinite;-ms-animation:blink .7s infinite;-o-animation:blink .7s infinite;animation:blink .7s infinite}@-keyframes blink{0%,100%{opacity:1}50%{opacity:0}}@-webkit-keyframes blink{0%,100%{opacity:1}50%{opacity:0}}@-moz-keyframes blink{0%,100%{opacity:1}50%{opacity:0}}@-ms-keyframes blink{0%,100%{opacity:1}50%{opacity:0}}@-o-keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<script type="text/javascript" src="js/jssor.slider.mini.js"></script> 
+<script>jQuery(document).ready(function($){function a(){var $=t.$Elmt.parentNode.clientWidth;$?t.$ScaleWidth(Math.max(Math.min($,960),200)):window.setTimeout(a,30)}var i=[{$Duration:100,$Opacity:1,$Brother:{$Duration:100,$Opacity:1}}],n=[];n.L={$Duration:900,x:.21,$Easing:{$Left:$JssorEasing$.$EaseInOutSine},$Opacity:2},n.R={$Duration:900,x:-.6,$Easing:{$Left:$JssorEasing$.$EaseInOutSine},$Opacity:2},n["R|IB"]={$Duration:800,x:-.6,$Easing:{$Left:$JssorEasing$.$EaseInOutBack},$Opacity:2},n["RTT|360"]={$Duration:900,$Rotate:1,$Easing:{$Opacity:$JssorEasing$.$EaseLinear,$Rotate:$JssorEasing$.$EaseInQuad},$Opacity:2},n["RTT|10"]={$Duration:900,$Zoom:11,$Rotate:1,$Easing:{$Zoom:$JssorEasing$.$EaseInExpo,$Opacity:$JssorEasing$.$EaseLinear,$Rotate:$JssorEasing$.$EaseInExpo},$Opacity:2,$Round:{$Rotate:.8}},n["ZMF|10"]={$Duration:900,$Zoom:11,$Easing:{$Zoom:$JssorEasing$.$EaseInExpo,$Opacity:$JssorEasing$.$EaseLinear},$Opacity:2},n.FADE={$Duration:900,$Opacity:2},n["FADE|10"]={$Duration:2e3,$Opacity:2};var o={$AutoPlay:!0,$AutoPlaySteps:1,$AutoPlayInterval:1e3,$PauseOnHover:1,$StartIndex:0,$ArrowKeyNavigation:!1,$SlideEasing:$JssorEasing$.$EaseOutQuint,$SlideDuration:800,$MinDragOffsetToSlide:20,$SlideSpacing:0,$DisplayPieces:1,$ParkingPosition:0,$UISearchMode:1,$PlayOrientation:1,$DragOrientation:0,$SlideshowOptions:{$Class:$JssorSlideshowRunner$,$Transitions:i,$TransitionsOrder:1,$ShowLink:!0},$CaptionSliderOptions:{$Class:$JssorCaptionSlider$,$CaptionTransitions:n,$PlayInMode:1,$PlayOutMode:3},$ArrowNavigatorOptions:{$Class:$JssorArrowNavigator$,$ChanceToShow:1,$AutoCenter:2,$Steps:1},$BulletNavigatorOptions:{$Class:$JssorBulletNavigator$,$ChanceToShow:2,$AutoCenter:1,$Steps:1,$Lanes:1,$SpacingX:4,$SpacingY:4,$Orientation:1}},t=new $JssorSlider$("slider1_container",o);a(),$(window).bind("load",a),$(window).bind("resize",a),$(window).bind("orientationchange",a)});</script>
+<div class="wrapper">
+<div class="top">
+<div id="slider1_container" style="position: relative; width: 960px; height: 180px; overflow: hidden;">
+  <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 960px; height: 180px; overflow: hidden;">
+    <div>  
+      <div u=caption t="FADE" t2="FADE" du="1000" class="" style="position:absolute; left:0; top: 3px; width:299px; height:221px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-1.png" /> </a> </div>
+      <div u=caption t="FADE" t2="FADE" du="1000" class="" style="position:absolute; left:0; top: -10px; width:299px; height:221px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-2.png" /> </a> </div>
+      <div u=caption t="L" t2="FADE" d="-600" class="captionTitle" style="position:absolute; left:310px; top: 40px; width:635px; height:40px;"> HAR DU SMAG FOR MEDLEMSFORDELE? </div>
+      <div u=caption t="L" t2="FADE" d="-700" class="captionTitle1" style="position:absolute; left:310px; top: 75px; width:635px; height:70px;">SÅ MELD DIG IND I DIN IRMA </div>
+      <div u=caption t="FADE" t2="FADE" du="1000" class=""> </div>
+    </div>
+    <div> 
+      <div u=caption t="FADE" t2="FADE" du="1000" class="" style="position:absolute; left:0; top: -10px; width:299px; height:221px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-2.png" /> </a> </div>
+      <div u=caption t="FADE" t2="FADE" d="-600" du="1000" class="captionTitle2" style="position:absolute; left:280px; top: 40px; width:635px; height:61px;"> SE MEDLEMSFORDELENE OG </div>
+      <div u=caption t="FADE" t2="FADE" d="-550" du="1000" class="" style="position:absolute; left:460px; top: 90px; width:123px; height:112px; text-align: left;"> <a href="https://irma.dk/medlemfor" target="_blank"> <img u="image" src="img/meld.png" /> </a></div>  
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

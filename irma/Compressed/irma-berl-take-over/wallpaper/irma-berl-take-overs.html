@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gekko</title>
+<!--Adform Global Clicktag START-->
+<script type="text/javascript">
+    document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+    function adfOpenGlobalClickTAG() {
+        var adfClickTAGName = 'clickTAG',
+            adfClickTAGvalue = dhtml.getVar(adfClickTAGName, 'https://irma.dk/medlem'),
+            adfLandingpageTarget = dhtml.getVar('landingPageTarget', '_blank');
+        window.open(adfClickTAGvalue, adfLandingpageTarget);
+    }
+    if(window.addEventListener) {
+        window.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            adfOpenGlobalClickTAG();
+        }, true);
+    } else {
+        document.attachEvent('onclick', function() {
+            adfOpenGlobalClickTAG();
+        });
+    }
+</script>
+<!--Adform Global Clicktag END-->
+</head>
+<body style="margin:0;padding:0; background:#fff;">
+<style>
+*{ cursor: pointer;}
+.wrapper {
+	width: 2560px;
+	height: 1440px;
+	background: url(img/b-background.jpg) top center no-repeat
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<div class="wrapper">
+
+</div>
+</body>
+</html>

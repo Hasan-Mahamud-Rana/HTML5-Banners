@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Skylight</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+<meta name="app/config/environment" content="%7B%22modulePrefix%22%3A%22app%22%2C%22environment%22%3A%22production%22%2C%22locationType%22%3A%22history%22%2C%22zeroClipboard%22%3A%7B%22trustedDomains%22%3A%5B%22*%22%5D%2C%22allowScriptAccess%22%3A%22always%22%7D%2C%22cloudfrontURL%22%3A%22//d1xmotl1g5cxcm.cloudfront.net%22%2C%22sourcemapURL%22%3A%22//s3.amazonaws.com/direwolf-static-assets/ember-assets/assets%22%2C%22assetPrepend%22%3A%22//d1xmotl1g5cxcm.cloudfront.net/ember-assets/%22%2C%22trialDays%22%3A30%2C%22defaultTimeRanges%22%3A%5B%7B%22name%22%3A%22Last%206%20hours%22%2C%22timestamp%22%3A%22recent%22%2C%22duration%22%3A21600%2C%22default%22%3Atrue%7D%2C%7B%22name%22%3A%22Last%2030%20minutes%22%2C%22timestamp%22%3A%22recent%22%2C%22duration%22%3A1800%7D%2C%7B%22name%22%3A%22Last%205%20minutes%22%2C%22timestamp%22%3A%22recent%22%2C%22duration%22%3A300%7D%5D%2C%22dataRetentionDays%22%3A45%2C%22ssl%22%3Atrue%2C%22logger%22%3A%7B%22verbose%22%3Afalse%2C%22logFlags%22%3Atrue%7D%2C%22LOG_VERSION%22%3Afalse%2C%22EmberENV%22%3A%7B%22RAISE_ON_DEPRECATION%22%3Afalse%2C%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22app%22%2C%22version%22%3A%220.0.0+17392d06%22%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%22%27none%27%22%2C%22script-src%22%3A%22%27self%27%22%2C%22font-src%22%3A%22%27self%27%22%2C%22connect-src%22%3A%22%27self%27%22%2C%22img-src%22%3A%22%27self%27%22%2C%22style-src%22%3A%22%27self%27%22%2C%22media-src%22%3A%22%27self%27%22%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+
+    <script style="text/javascript">
+      var RAILS_ENV = window.RAILS_ENV = {
+        stripe: {
+          publicKey: null,
+        },
+
+        mixpanel: {
+          token: null
+        },
+
+        intercom: {
+          appId: null
+        },
+
+        bugsnag: {
+          apiKey: null
+        },
+
+        collectorWsUrl: ''
+      };
+
+      RAILS_ENV.stripe.publicKey = "pk_live_FbmSX1AXiIDowbmOoEz28CAj";
+RAILS_ENV.mixpanel.token = "486f9a05b3f896743400d472f348b4be";
+RAILS_ENV.intercom.appId = "wln63sqk";
+RAILS_ENV.bugsnag.apiKey = "d63289008f822fa41f88bea9d1d4aeb4";
+RAILS_ENV.collectorWsUrl = "wss://data.skylight.io";
+RAILS_ENV.dwEnv = "production";
+RAILS_ENV.emberVersion = "direwolf-ember:17392d0";
+RAILS_ENV.apiToken = "stTn1fNT+7MoJ2PmxhxkZ3uN7HBew/VWUisXBVjBp1J1c2VyX2lkPUFFc3dJX0hoalhkOCZyb2xlPWNsaWVudCZ2PTE=";
+RAILS_ENV.trackingEnabled = true;
+
+      function scriptTag(properties) {
+        var script = document.createElement('script');
+        script.type = "text/javascript";
+
+        for (var prop in properties) {
+          script[prop] = properties[prop];
+        }
+
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+      }
+
+      // TODO: Make the id part of ENV
+      scriptTag({ src: "//hello.myfonts.net/count/268ffd", async: true });
+
+      if (RAILS_ENV.trackingEnabled) {
+        if (RAILS_ENV.intercom.appId) {
+          (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/'+RAILS_ENV.intercom.appId;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+        }
+
+        if (RAILS_ENV.mixpanel.token) {
+          (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+
+          mixpanel.init(RAILS_ENV.mixpanel.token);
+        }
+      }
+    </script>
+
+    <script type="text/javascript" src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-2.min.js"></script>
+    <script type="text/javascript">
+      Bugsnag.autoNotify = false;
+
+      if (RAILS_ENV.bugsnag.apiKey) {
+        Bugsnag.apiKey = RAILS_ENV.bugsnag.apiKey;
+        Bugsnag.releaseStage = RAILS_ENV.dwEnv;
+        if (RAILS_ENV.emberVersion) {
+          Bugsnag.appVersion = RAILS_ENV.emberVersion;
+        }
+      }
+    </script>
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+      if (typeof Stripe !== "undefined" && RAILS_ENV.stripe.publicKey) {
+        Stripe.setPublishableKey(RAILS_ENV.stripe.publicKey);
+      }
+    </script>
+
+    <link rel="zeroclipboard" href="//d1xmotl1g5cxcm.cloudfront.net/ember-assets/assets/ZeroClipboard-3ef2e4d603a8b4600daebb249d1d9928.swf">
+
+    <link rel="stylesheet" href="//d1xmotl1g5cxcm.cloudfront.net/ember-assets/assets/vendor-cd0e6245db53e188861c5018263dfa97.css">
+    <link rel="stylesheet" href="//d1xmotl1g5cxcm.cloudfront.net/ember-assets/assets/app-330d0b498c6c95209c7d87e7e9bcecfa.css">
+
+    
+  </head>
+  <body>
+    
+
+    <div id="ember-application">
+    </div>
+    <div id="IntercomDefaultWidget"><span></span></div>
+
+    <script src="//d1xmotl1g5cxcm.cloudfront.net/ember-assets/assets/vendor-b52e132484a5aa598f36ca59822d4e7c.js"></script>
+    <script src="//d1xmotl1g5cxcm.cloudfront.net/ember-assets/assets/app-b699d9f445d8601cd3d30414c7c28353.js"></script>
+
+    
+  </body>
+</html>

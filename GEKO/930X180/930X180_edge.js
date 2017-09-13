@@ -1,0 +1,11 @@
+
+(function(compId){var _=null,y=true,n=false,x3='6.0.0.400',x2='5.0.0',x4='rgba(0,0,0,0)',g='image',e12='${slide22}',zx='scaleX',x10='rgba(255,255,255,1)',tp='top',e14='${start-test3}',e13='${_1st-slide}',x1='6.0.0',e11='${nyhed}',zy='scaleY',i='none';var g7='start-test3.jpg',g6='slide2.jpg',g8='1st-slide.jpg',g9='nyhed.jpg',g5='bg.jpg';var im='images/',aud='media/',vid='media/',js='js/',fonts={},opts={'gAudioPreloadPreference':'auto','gVideoPreloadPreference':'auto'},resources=[],scripts=[],symbols={"stage":{v:x1,mv:x2,b:x3,stf:i,cg:i,rI:n,cn:{dom:[{id:'bg',t:g,r:['0','0','930px','180px','auto','auto'],f:[x4,im+g5,'0px','0px']},{id:'slide22',t:g,r:['69px','180px','580px','95px','auto','auto'],f:[x4,im+g6,'0px','0px']},{id:'start-test3',t:g,r:['550px','183px','201px','54px','auto','auto'],f:[x4,im+g7,'0px','0px']},{id:'slide1',t:'group',r:['13px','0px','699','132','auto','auto'],c:[{id:'_1st-slide',t:g,r:['121px','180px','578px','84px','auto','auto'],o:'1',f:[x4,im+g8,'0px','0px']},{id:'nyhed',t:g,r:['0px','0px','112px','49px','auto','auto'],cl:'rect(0px 112px 49px 0px)',o:'1',f:[x4,im+g9,'0px','0px'],tf:[[],[],[],['0','0']]}]}],style:{'${Stage}':{isStage:true,r:[undefined,undefined,'930px','180px'],overflow:'hidden',f:[x10]}}},tt:{d:6500,a:y,data:[["eid64",zy,1000,500,"linear",e11,'0','1'],["eid229",tp,3250,750,"linear",e12,'180px','42px'],["eid25",tp,0,1000,"linear",e13,'180px','47px'],["eid180",tp,2000,1000,"linear",e13,'47px','-88px'],["eid236",tp,5000,500,"linear",e14,'183px','64px'],["eid63",zx,1000,500,"linear",e11,'0','1'],["eid67",tp,1000,500,"linear",e11,'-25px','0px'],["eid227",tp,2500,500,"linear",e11,'0px','-97px']]}}};AdobeEdge.registerCompositionDefn(compId,symbols,fonts,scripts,resources,opts);})("EDGE-9522442");
+(function($,Edge,compId){var Composition=Edge.Composition,Symbol=Edge.Symbol;Edge.registerEventBinding(compId,function($){
+//Edge symbol: 'stage'
+(function(symbolName){Symbol.bindTriggerAction(compId,symbolName,"Default Timeline",4000,function(sym,e){});
+//Edge binding end
+Symbol.bindTriggerAction(compId,symbolName,"Default Timeline",6500,function(sym,e){this.play(0);});
+//Edge binding end
+})("stage");
+//Edge symbol end:'stage'
+})})(AdobeEdge.$,AdobeEdge,"EDGE-9522442");

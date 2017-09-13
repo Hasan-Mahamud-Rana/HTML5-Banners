@@ -1,0 +1,24 @@
+{
+    "version": "1.0",
+    "title": "Main asset",
+    "description": "",
+    "width": 930,
+    "height": 180,
+    "events": {
+        "enabled": 0,
+        "list": {
+        }
+    },
+    "clicktags": {
+        "clickTAG1": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180",
+        "clickTAG2": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180",
+        "clickTAG3": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180",
+        "clickTAG4": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180",
+        "clickTAG5": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180",
+        "clickTAG6": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180",
+        "clickTAG7": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180",
+        "clickTAG8": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180",
+        "clickTAG9": "http:\/\/www.blivcoopmedlemnu.dk\/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180"
+    },
+    "source": "930x180.html"
+}

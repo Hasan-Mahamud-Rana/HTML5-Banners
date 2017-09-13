@@ -1,0 +1,17 @@
+{
+    "version": "1.0",
+    "uniqueId": "buad84fdb4cb192a8f979e5c085bddba55",
+    "title": "Main asset",
+    "description": "",
+    "width": 160,
+    "height": 600,
+    "events": {
+        "enabled": 0,
+        "list": {
+        }
+    },
+    "clicktags": {
+        "clickTAG": "http:\/\/www.edc.dk\/hilleroed\/"
+    },
+    "source": "edc-160x600.html"
+}

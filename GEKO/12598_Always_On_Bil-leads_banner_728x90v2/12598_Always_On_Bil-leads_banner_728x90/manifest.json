@@ -1,0 +1,17 @@
+{
+    "version": "1.0",
+    "title": "12598_Always_On_Bil-leads_banner_300x250",
+    "description": "Adform Standard banner; 300x250; Version 1.0",
+    "width": 300,
+    "height": 250,
+    "events": {
+        "enabled": 0,
+        "list": {
+        }
+    },
+    "clicktags": {
+        "StartTesten": "http:\/\/www.moensterbilist.dk\/",
+        "backupClickURL": "http:\/\/www.moensterbilist.dk\/"
+    },
+    "source": "12598_Always_On_Bil-leads_banner_300x250.html"
+}

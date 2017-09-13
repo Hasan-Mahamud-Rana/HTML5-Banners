@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<adf>
+  <banner>
+    <details>
+      <uniqueId>bfba02f851ceb47446191d1c6cc2139b1</uniqueId>
+      <format>Standard</format>
+      <name>Standard</name>
+      <events>1</events>
+    </details>
+    <settings>
+      <landingPageTarget>_blank</landingPageTarget>
+    </settings>
+    <assets>
+      <asset>
+        <sourceType>src</sourceType>
+        <fileName>Main asseta5c322597f69902a97d4702995db388d7</fileName>
+        <clickTagNames>
+          <clickTagName>clickTAG1</clickTagName>
+        </clickTagNames>
+        <eventIds/>
+      </asset>
+    </assets>
+    <bannerClickTags>
+      <bannerClickTag name="clickTAG1" displayName="clickTAG1"><![CDATA[http://www.blivcoopmedlemnu.dk/?utm_campaign=sparidagogrestenaflivet&utm_source=paid_media&utm_medium=website&utm_term=slider&utm_content=website_930x180]]></bannerClickTag>
+    </bannerClickTags>
+    <bannerEvents/>
+    <variables/>
+  </banner>
+</adf>

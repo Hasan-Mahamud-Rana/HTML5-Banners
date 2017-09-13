@@ -1,0 +1,17 @@
+{
+    "version": "1.0",
+    "uniqueId": "4343d97ecef079765dc480fd65263d62",
+    "title": "Standard_main_asset",
+    "description": "",
+    "width": 930,
+    "height": 180,
+    "events": {
+        "enabled": 0,
+        "list": {
+        }
+    },
+    "clicktags": {
+        "clickTAG": "http:\/\/www.terminalen.dk\/artikler\/nyheder\/nyheder\/2016\/2016-09-15-terminalen-outlet?utm_source=bilbasen.dk&utm_medium=banner&utm_campaign=outlet-dd-uge-13-15"
+    },
+    "source": "terminalen-930X180.html"
+}

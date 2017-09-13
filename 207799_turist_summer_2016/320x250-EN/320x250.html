@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>320x250</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TimelineLite.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
+		<script src="mraid.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+			body {
+				margin:0;
+				padding: 0;
+				font-family: Oswald, 'Helvetica', Arial, Sans-Serif;
+				-webkit-font-smoothing: antialiased !important;
+			}
+			#banner {
+				position:absolute;
+				width:320px;
+				height:250px;
+				background-color:#d2d2d2;
+
+				overflow:hidden;
+				cursor:pointer;
+			}
+
+			
+			#banner:hover {cursor:pointer;}
+			#banner div {position:absolute;}
+			#banner {transform:  translate3d(0px, 0px, 0px)
+}
+			#logobig {position: absolute; left: 100px; top: 73px; }
+			#logo {position: absolute; left: 132px; top: 155px; }
+			#products {position: absolute; left: 0px; top: 0px; }
+
+			#square {
+				position: absolute;
+				left: 70px;
+				top: 45px;
+				width: 160px;
+				height: 160px;
+				border: 9px #fff solid;
+				padding: 32px 20px 0px;
+			}
+
+			#text1 {
+				position: absolute;
+				left: 50px;
+				top: 20px;
+				width: 200px;
+				height: 220px;
+				text-align: center;
+				padding: 32px 20px 0px;
+			}
+
+			#text2 {
+				position: absolute;
+				left: 50px;
+				top: 20px;
+				width: 200px;
+				height: 220px;
+				text-align: center;
+				padding: 32px 20px 0px;
+			}
+
+			#designer01  {
+				position: absolute;
+				left: 50px;
+				top: 60px;
+				width: 200px;
+				height: 150px;
+				text-align: center;
+				padding: 32px 20px 0px;
+			}
+
+			#designer02  {
+				position: absolute;
+				left: 50px;
+				top: 60px;
+				width: 200px;
+				height: 150px;
+				text-align: center;
+				padding: 32px 20px 0px;
+			}
+
+			#designer03  {
+				position: absolute;
+				left: 50px;
+				top: 60px;
+				width: 200px;
+				height: 150px;
+				text-align: center;
+				padding: 32px 20px 0px;
+			}
+
+			#designer04  {
+				position: absolute;
+				left: 50px;
+				top: 60px;
+				width: 200px;
+				height: 150px;
+				text-align: center;
+				padding: 32px 20px 0px;
+			}
+
+			
+
+			#text3 {
+				position: absolute;
+				left: 50px;
+				top: 20px;
+				width: 200px;
+				height: 220px;
+				text-align: center;
+				padding: 32px 20px 0px;
+			}
+			#btn {
+				left: 90px;
+			    top: 121px;
+			    width: 121px;
+			    height: 27px;
+			    text-align: center;
+			    padding: 0 5px;
+			    background-color: #7d7a7f;
+			}
+			#tagline {
+				position: absolute;
+				left: 0px;
+				top: 209px;
+				width: 320px;
+				height: 36px;
+				text-align: center;
+				padding: 5px;
+			}
+/*			#text p {font-weight: 300; font-size: 32px; color: #fff; line-height: 37px;}		*/
+			#text1 p {letter-spacing: 1px; font-weight: 400; font-size: 25px; color: #fff; line-height: 32px;}
+			#text2 p {letter-spacing: 1px;font-weight: 400; font-size: 25px; color: #fff; line-height: 32px;}
+			#designer01 p {letter-spacing: 1px;font-weight: 400; font-size: 25px; color: #fff; line-height: 32px;}
+			#designer02 p {letter-spacing: 1px;font-weight: 400; font-size: 25px; color: #fff; line-height: 32px;}
+			#designer03 p {letter-spacing: 1px;font-weight: 400; font-size: 25px; color: #fff; line-height: 32px;}
+			#designer04 p {letter-spacing: 1px;font-weight: 400; font-size: 25px; color: #fff; line-height: 32px;}
+			
+			#text3 p { letter-spacing: 1px;font-weight: 400;font-size: 12px;color: #fff;line-height: 18px;}
+			#btn p {letter-spacing: 1px;font-weight: 400; font-size: 14px; color: #fff; line-height: 0px;}
+			#tagline p {letter-spacing: 1px;font-weight: 400; font-size: 14px; color: #fff; line-height: 0px;}
+
+		</style>
+	</head>
+<body>
+
+	<div id="banner">
+		
+		
+		
+		<div id="text1">	
+			<p>GET<br>10% OFF</p>
+		</div>
+		<div id="products"><img src="products.png"></div>
+		<div id="square"></div>
+
+		<div id="text2">	
+			<p>THE FINEST</p>
+		</div>
+
+		<div id="designer01">	
+			<p>FASHION</p>
+		</div>
+
+		<div id="designer02">	
+			<p>BEAUTY</p>
+		</div>
+
+		<div id="designer03">	
+			<p>DESIGN</p>
+		</div>
+
+		<div id="designer04">	
+			<p>FOOD</p>
+		</div>
+
+		
+
+		<div id="text3">	
+			<p>GET YOUR<br>10%VIP CARD TO<br>ILLUM NOW</p>
+		</div>
+
+		<div id="btn">	
+			<p>GET CARD HERE</p>
+		</div>
+		
+		<div id="logo">
+			<img src="illum_gold.svg" width="32px" height="32px">
+		</div>	
+		<div id="logobig">
+			<img src="illum.png" width="99px" height="104px">
+		</div>
+		<div id="tagline">	
+			<p>COPENHAGEN’S LUXURY DEPARTMENT STORE</p>
+		</div>
+	</div>
+
+	<script>
+
+		var reps;
+
+		function startReps() {
+			reps = 1;
+		}
+
+		function chkReps() {
+			if(reps == 3) {
+				// pause or stop, or something..
+				timeline.pause();
+				console.log('LAST STOP');
+			}
+		}
+
+		function updateReps() {
+		  reps++;
+		}
+
+		function reset() {
+		  reps = 0;
+		}
+
+		// looping count the repeats
+		// do not fadeout banner in last repeat.
+		var timeline = new TimelineMax({
+			delay: 0.1,
+			repeat: 3,
+			repeatDelay: 3,
+			onStart: startReps,
+			onRepeat: updateReps
+		});
+
+		var text1, logo;
+
+		function setObj(){
+			
+			square = document.getElementById("square");
+			text1 = document.getElementById("text1");
+			text2 = document.getElementById("text2");
+			designer01 = document.getElementById("designer01");
+			designer02 = document.getElementById("designer02");
+			designer03 = document.getElementById("designer03");	
+			designer04 = document.getElementById("designer04");
+				
+			text3 = document.getElementById("text3");		
+			btn = document.getElementById("btn");
+			products = document.getElementById("products");
+			logo = document.getElementById("logo");			
+			logobig = document.getElementById("logobig");
+		}
+
+
+		setObj();
+CSSPlugin.defaultTransformPerspective = 300;
+
+		timeline
+
+			.to(products, 0.8, {z:-500, x:"-20", alpha:0, ease:Power2.easeInOut}, "+=1.2")
+			.to(square, 1, {rotationY:180, ease:Power2.easeInOut}, "-=0.7")
+			.to(logobig, 1, {rotationY: 90, ease:Power2.easeInOut}, "-=1")
+
+			.from(logo, 0.5, {z:-20, alpha:0, ease:Power4.easeOut}, "-=0.25")
+			.from(text1, 0.01, {alpha:0})
+
+			.to(text1, 0.1, {alpha:0}, "+=1.5")
+			.from(text2, 0.1, {alpha:0}, "+=0.1")
+			.from(designer01, 0.1, {alpha:0}, "-=0.1")
+			.to(designer01, 0.1, {alpha:0}, "+=1")
+			.from(designer02, 0.1, {alpha:0})
+			.to(designer02, 0.1, {alpha:0}, "+=0.5")
+			.from(designer03, 0.1, {alpha:0})
+			.to(designer03, 0.1, {alpha:0}, "+=0.5")
+			.from(designer04, 0.1, {alpha:0})
+			
+			
+
+			.to(text2, 0.1, {alpha:0}, "+=0.5")
+			.to(designer04, 0.1, {alpha:0}, "-=0.1")
+
+			.from(text3, 0.1, {alpha:0}, "+=0.25")
+			.from(btn, 1, {rotationY:-90, ease:Power4.easeOut})
+
+
+			var banner = document.getElementById('banner');
+			banner.addEventListener('click', function() {
+			mraid.open(Adform.getClickURL('clickTAG'));
+			});
+
+			TweenMax.lagSmoothing(0);
+
+			//init();
+
+		</script>
+	</body>
+</html>

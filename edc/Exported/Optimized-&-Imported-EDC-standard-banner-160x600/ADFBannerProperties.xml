@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<adf>
+  <banner>
+    <details>
+      <uniqueId>buad84fdb4cb192a8f979e5c085bddba55</uniqueId>
+      <format>Standard</format>
+      <name>Standard</name>
+      <events>1</events>
+    </details>
+    <settings>
+      <landingPageTarget>_blank</landingPageTarget>
+    </settings>
+    <assets>
+      <asset>
+        <sourceType>src</sourceType>
+        <fileName><![CDATA[Main assetadbbcf8c38ec3c7642a8af9870996bfb4]]></fileName>
+        <clickTagNames>
+          <clickTagName>clickTAG</clickTagName>
+        </clickTagNames>
+        <eventIds/>
+      </asset>
+    </assets>
+    <bannerClickTags>
+      <bannerClickTag name="clickTAG" displayName="clickTAG"><![CDATA[http://www.edc.dk/hilleroed/]]></bannerClickTag>
+    </bannerClickTags>
+    <bannerEvents/>
+    <variables/>
+  </banner>
+</adf>

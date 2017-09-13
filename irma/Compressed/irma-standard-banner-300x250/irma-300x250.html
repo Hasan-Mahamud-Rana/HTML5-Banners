@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gekko</title>
+<!--Adform Global Clicktag START-->
+<script type="text/javascript">
+    document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+    function adfOpenGlobalClickTAG() {
+        var adfClickTAGName = 'clickTAG',
+            adfClickTAGvalue = dhtml.getVar(adfClickTAGName, 'https://irma.dk/medlem'),
+            adfLandingpageTarget = dhtml.getVar('landingPageTarget', '_blank');
+        window.open(adfClickTAGvalue, adfLandingpageTarget);
+    }
+    if(window.addEventListener) {
+        window.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            adfOpenGlobalClickTAG();
+        }, true);
+    } else {
+        document.attachEvent('onclick', function() {
+            adfOpenGlobalClickTAG();
+        });
+    }
+</script>
+<!--Adform Global Clicktag END-->
+</head>
+<body style="margin:0;padding:0; background:#fff;">
+<style>
+*{ cursor: pointer; }
+@font-face {
+	font-family: nexa_lightregular;
+	src: url(font/nexa_light.eot);
+	src: url(font/nexa_light.eot?#iefix) format('embedded-opentype'), url(font/nexa_light.woff2) format('woff2'), url(font/nexa_light.woff) format('woff'), url(font/nexa_light.ttf) format('truetype'), url(font/nexa_light.svg#nexa_lightregular) format('svg');
+	font-weight: 400;
+	font-style: normal
+}
+@font-face {
+	font-family: nexa_boldregular;
+	src: url(font/nexa_bold.eot);
+	src: url(font/nexa_bold.eot?#iefix) format('embedded-opentype'), url(font/nexa_bold.woff2) format('woff2'), url(font/nexa_bold.woff) format('woff'), url(font/nexa_bold.ttf) format('truetype'), url(font/nexa_bold.svg#nexa_boldregular) format('svg');
+	font-weight: 400;
+	font-style: normal
+}
+.captionTitle {
+	font-family: nexa_lightregular;
+	font-size: 22px;
+	line-height: 1.1;
+	text-align: center
+}
+.captionTitle1 {
+	font-family: nexa_boldregular;
+	font-size: 25px;
+	line-height: 1.4;
+	text-align: center
+}
+.captionTitle5 {
+	font-family: nexa_boldregular;
+	font-size: 25px;
+	line-height: 1;
+	text-align: center
+}
+.captionTitle2 {
+	font-family: nexa_lightregular;
+	line-height: 1.3;
+	font-size: 25px;
+	text-align: center
+}
+.captionTitle4 {
+	font-family: nexa_lightregular;
+	font-size: 20px;
+	line-height: 1.3;
+	text-align: center
+}
+div#slider1_container>div {
+	background: url(img/bg.jpg)
+}
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+} 
+ </style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<script type="text/javascript" src="js/jssor.slider.mini.js"></script> 
+<script>jQuery(document).ready(function($){function a(){var $=t.$Elmt.parentNode.clientWidth;$?t.$ScaleWidth(Math.max(Math.min($,300),250)):window.setTimeout(a,30)}var i=[{$Duration:100,$Opacity:1,$Brother:{$Duration:100,$Opacity:1}}],n=[];n.L={$Duration:900,x:.6,$Easing:{$Left:$JssorEasing$.$EaseInOutSine},$Opacity:2},n["R|IB"]={$Duration:800,x:-.6,$Easing:{$Left:$JssorEasing$.$EaseInOutBack},$Opacity:2},n["RTT|360"]={$Duration:900,$Rotate:1,$Easing:{$Opacity:$JssorEasing$.$EaseLinear,$Rotate:$JssorEasing$.$EaseInQuad},$Opacity:2},n["RTT|10"]={$Duration:900,$Zoom:11,$Rotate:1,$Easing:{$Zoom:$JssorEasing$.$EaseInExpo,$Opacity:$JssorEasing$.$EaseLinear,$Rotate:$JssorEasing$.$EaseInExpo},$Opacity:2,$Round:{$Rotate:.8}},n["ZMF|10"]={$Duration:900,$Zoom:11,$Easing:{$Zoom:$JssorEasing$.$EaseInExpo,$Opacity:$JssorEasing$.$EaseLinear},$Opacity:2},n.FADE={$Duration:900,$Opacity:2},n["FADE|C"]={$Duration:100,$Opacity:1};var o={$AutoPlay:!0,$AutoPlaySteps:1,$AutoPlayInterval:1e3,$PauseOnHover:1,$StartIndex:0,$ArrowKeyNavigation:!1,$SlideEasing:$JssorEasing$.$EaseOutQuint,$SlideDuration:800,$MinDragOffsetToSlide:20,$SlideSpacing:0,$DisplayPieces:1,$ParkingPosition:0,$UISearchMode:1,$PlayOrientation:1,$DragOrientation:0,$SlideshowOptions:{$Class:$JssorSlideshowRunner$,$Transitions:i,$TransitionsOrder:1,$ShowLink:!0},$CaptionSliderOptions:{$Class:$JssorCaptionSlider$,$CaptionTransitions:n,$PlayInMode:1,$PlayOutMode:3},$ArrowNavigatorOptions:{$Class:$JssorArrowNavigator$,$ChanceToShow:1,$AutoCenter:2,$Steps:1},$BulletNavigatorOptions:{$Class:$JssorBulletNavigator$,$ChanceToShow:2,$AutoCenter:1,$Steps:1,$Lanes:1,$SpacingX:4,$SpacingY:4,$Orientation:1}},t=new $JssorSlider$("slider1_container",o);a(),$(window).bind("load",a),$(window).bind("resize",a),$(window).bind("orientationchange",a)});</script>
+<div id="slider1_container" style="position: relative; width: 300px; height: 250px; overflow: hidden;">
+  <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 300px; height: 250px; overflow: hidden;">
+    <div>
+      <div u=caption t="FADE" t2="FADE" du="1000" class="" style="position:absolute; left:0; top: 20px; width:300px; height:195px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-1.png" /> </a> </div>
+	  <div u=caption t="FADE" t2="FADE" du="1000" class="" style="position:absolute; left:0; top: 20px; width:300px; height:195px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-2.1.png" /> </a> </div>
+    </div>
+    <div>
+      <div u=caption t="FADE" t2="L" du="1000" class="" style="position:absolute; left: 61px; top:3px; width:178px; height:121px;"> <a href="#" target="_blank"> <img u="image" src="img/Coop-2.png" /> </a> </div>
+      <div u=caption t="L" t2="FADE" d="-600" class="captionTitle" style="position:absolute; left:0; top: 136px; width:300px; height:48px;"> HAR DU SMAG FOR MEDLEMSFORDELE? </div>
+      <div u=caption t="L" t2="FADE" d="-700" class="captionTitle1" style="position:absolute; left:0; top: 187px; width:300px; height:65px;">SÅ MELD DIG IND I</div>
+	  <div u=caption t="L" t2="FADE" d="-900" class="captionTitle5" style="position:absolute; left:0; top: 220px; width:300px; height:65px;">DIN IRMA </div>
+	  <div u=caption t="FADE" t2="FADE" du="2000" ></div>
+    </div>
+    <div>
+      <div u=caption t="FADE" t2="L" du="1000" class="" style="position:absolute; left:10px; top: 0; width:261px; height:100px;"> <a href="#" target="_blank"> <img u="image" src="img/mad-glade.png" /> </a> </div>
+      <div u=caption t="FADE" t2="FADE" d="-600" class="captionTitle2" style="position:absolute; left:0; top: 158px; width: 300px; height:30.5px;">BLIV MEDLEM NU</div>
+	  <div u=caption t="FADE" t2="FADE" d="-900" class="captionTitle2" style="position:absolute; left:0; top: 188px; width: 300px; height:30.5px;">OG FÅ EN EKSKLUSIV</div>
+	  <div u=caption t="FADE" t2="FADE" d="-900" class="captionTitle2" style="position:absolute; left:0; top: 218px; width: 300px; height:30.5px;">KOGEBOG </div>
+	  <div u=caption t="FADE" t2="FADE" du="2000" ></div>
+    </div>
+    <div>
+      <div u=caption t="FADE" t2="FADE" du="1000" class="captionTitle4" style="position:absolute; left:0; top:150px; width:300px; height:21px; text-align: center;"> SE MEDLEMSFORDELENE OG </div>
+      <div u=caption t="L" t2="FADE" d="-200" du="1000" class="" style="position:absolute; left: 61px; top:3px; width:178px; height:121px;"> <img u="image" src="img/Coop-2.png" /></div>
+	  <div u=caption t="FADE" t2="FADE" du="1000" class="" style="position:absolute; left:65px; top: 175px; width:170px; height:32px; text-align: left;"> <a href="https://irma.dk/medlem" target="_blank"> <img u="image" style="animation: pulse .5s linear infinite; " src="img/meld.png" /> </a> </div>
+      <div u=caption t2="FADE" d="-350" du="1000" class="" style="position:absolute; left:85px; top: 213px; width:130px; height:23px;"> <a href="#" target="_blank"> <img u="image" src="img/irma.png" /> </a> </div>
+	  <div u=caption t="FADE" t2="FADE" du="1000" ></div>
+    </div>
+  </div>
+</div>
+</body></html>

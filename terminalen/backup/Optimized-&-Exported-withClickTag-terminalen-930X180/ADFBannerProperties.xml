@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<adf>
+  <banner>
+    <details>
+      <uniqueId>4343d97ecef079765dc480fd65263d62</uniqueId>
+      <format>Standard</format>
+      <name>Standard</name>
+      <events>1</events>
+    </details>
+    <settings>
+      <responsiveWidth>0</responsiveWidth>
+      <responsiveHeight>0</responsiveHeight>
+      <landingPageTarget>_blank</landingPageTarget>
+    </settings>
+    <assets>
+      <asset>
+        <sourceType>src</sourceType>
+        <fileName><![CDATA[Standard_main_asset]]></fileName>
+        <clickTagNames>
+          <clickTagName>clickTAG</clickTagName>
+        </clickTagNames>
+        <eventIds/>
+      </asset>
+    </assets>
+    <bannerClickTags>
+      <bannerClickTag name="clickTAG" displayName="clickTAG"><![CDATA[http://www.terminalen.dk/artikler/nyheder/nyheder/2016/2016-09-15-terminalen-outlet?utm_source=bilbasen.dk&utm_medium=banner&utm_campaign=outlet-dd-uge-13-15]]></bannerClickTag>
+    </bannerClickTags>
+    <bannerEvents/>
+    <variables/>
+  </banner>
+</adf>

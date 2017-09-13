@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rails autoloading for your gem | Pivotal P.O.V.</title>
+
+		<style type='text/css'>
+					.no-break br {
+						display: none !important;
+					}
+			</style><link rel="alternate" type="application/rss+xml" title="Pivotal P.O.V. &raquo; Feed" href="http://blog.pivotal.io/feed" />
+<link rel="alternate" type="application/rss+xml" title="Pivotal P.O.V. &raquo; Comments Feed" href="http://blog.pivotal.io/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="Pivotal P.O.V. &raquo; Rails autoloading for your gem Comments Feed" href="http://blog.pivotal.io/labs/labs/rails-autoloading-for-your-gem/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/blog.pivotal.io\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.4"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='gopo-fa-css'  href='http://blog.pivotal.io/wp-content/themes/pivotal2015/external/font-awesome.min.css?ver=2.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='gopo-search-css'  href='http://blog.pivotal.io/wp-content/themes/pivotal2015/_css/search.css?ver=2.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='slb_core-css'  href='http://blog.pivotal.io/wp-content/plugins/simple-lightbox/client/css/app.css?ver=2.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-paginate-css'  href='http://blog.pivotal.io/wp-content/plugins/wp-paginate/wp-paginate.css?ver=1.3.1' type='text/css' media='screen' />
+<!-- This site uses the Google Analytics by Yoast plugin v5.4 - Universal disabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-39702075-1']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_gat._forceSSL']);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+<!-- / Google Analytics by Yoast -->
+<script type='text/javascript' src='http://blog.pivotal.io/wp-includes/js/jquery/jquery.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='//app-sj05.marketo.com/js/forms2/js/forms2.js?ver=2.2.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.pivotal.io/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.pivotal.io/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='= != send(:=)' href='http://blog.pivotal.io/pivotal-labs/standup/send' />
+<link rel='next' title='The Surprising History and Bright Future of Data Science' href='http://blog.pivotal.io/pivotal/news/the-surprising-history-and-bright-future-of-data-science' />
+<link rel='canonical' href='http://blog.pivotal.io/labs/labs/rails-autoloading-for-your-gem' />
+<link rel='shortlink' href='http://blog.pivotal.io/?p=0' />
+<!-- Graceful Pull-Quotes plugin v2.4.2 -->
+	<link rel="stylesheet" href="http://blog.pivotal.io/wp-content/plugins/graceful-pull-quotes/resources/jspullquotes-core.css" type="text/css" />
+	<link rel="stylesheet" href="http://blog.pivotal.io/wp-content/plugins/graceful-pull-quotes/styles/Modern.css" type="text/css" />
+	<script type="text/javascript" src="http://blog.pivotal.io/wp-content/plugins/graceful-pull-quotes/resources/jspullquotes.js"></script>
+	<script type="text/javascript">
+		var jspq_options = new Array("1", "1", "right", "1", "1", "blockquote", "pullquote", "pullquote pqRight");
+		pullQuoteOpts(jspq_options);
+	</script>
+<!-- end pull-quote additions -->
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script>
+<script charset="utf-8" type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script charset="utf-8" type="text/javascript">stLight.options({"publisher":"wp.d1e51575-bbcf-4806-912c-6fbdc0c09e68","doNotCopy":true,"hashAddressBar":false,"doNotHash":true});var st_type="wordpress3.9.1";</script>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no' id='viewport' name='viewport'>
+		<link href='http://d1fto35gcfffzn.cloudfront.net/images/favicon.ico' rel='shortcut icon' type='image/vnd.microsoft.icon'>
+		<link href="http://blog.pivotal.io/wp-content/themes/pivotal2015/external/application.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="http://blog.pivotal.io/wp-content/themes/pivotal2015/style.css" media="all" rel="stylesheet" type="text/css" />
+		<!-- :javascript -->
+		<!-- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ -->
+		<!-- (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), -->
+		<!-- m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) -->
+		<!-- })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); -->
+		<!-- ga('create', 'UA-39702075-1', 'auto'); -->
+		<!-- ga('send', 'pageview'); -->
+	</head>
+	<body id='home'>
+		<div id='contactpopup'>
+			<div class='closeit'>
+				<div class='inner'>
+					<div class='h4'>Close</div>
+				</div>
+			</div>
+
+			<div class='popupreg'>
+				<form id='mktoForm_1347'>
+					<div class='h2'>Glad You're Ready.  Let's Get Started!</div>
+					<p>Let us know how we can contact you.</p>
+					<script>
+						var contactformID = "1347"
+						MktoForms2.loadForm("//app-sj05.marketo.com", "625-IUJ-009", contactformID, function (form) {
+							form.onSuccess(function (values, followUpUrl) {
+								form.getFormElem().hide();
+								return false;
+							});
+						});
+					</script>
+				</form>
+			</div>
+			<div class='confirmation'>
+				<div class='h2'>Thank you!</div>
+				<p>We'll respond shortly.</p>
+			</div>
+		</div>
+
+		<div id="search-dropdown-box">
+	<div class="search-dropdown--container js-search-dropdown">
+	  <div class="container-fluid">
+		<div class="close-menu-large"><img src="http://blog.pivotal.io/external/icon-close.png"></div
+		<div class="search-form--container">
+		  <div class="form-search">
+			<div class='gcse-search'></div>
+				<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+				<script type="text/javascript">
+				  google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
+				  google.setOnLoadCallback(function() {
+					var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+					  '012029519579280034868:3hzywhss5ik', customSearchOptions);
+					customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+					var options = new google.search.DrawOptions();
+					options.setSearchFormRoot('cse-search-form');
+					customSearchControl.draw('cse', options);
+					customSearchControl.setSearchCompleteCallback(this,function(){
+					  jQuery('#main').hide();
+					  jQuery('#cse').show();
+					  var query = jQuery('input.gsc-input').val();
+					  jQuery('#cse:not(.processed)').prepend('<h1 id="page-title" class="title"><span class="left">Search</span>:<span class="right"></span></h1>').addClass('processed');
+					  jQuery('#cse .right').html(' ' + query);
+					});
+					//jQuery('input.gsc-input:not(.placeholder)').val('What do you want to find, build, create or do?').addClass('placeholder');
+					// Focus on search box block.
+					jQuery('.gsc-results-close-btn').click(function () {
+						jQuery('#search-dropdown-box').hide();
+					});
+					/*
+					jQuery('input.gsc-input').bind('focus', function(){
+						if (jQuery(this).val() == 'What do you want to find, build, create or do?'){
+							jQuery(this).val('');
+						}
+					}).bind('blur', function(){
+						if (jQuery(this).val() === ''){
+							jQuery(this).val('What do you want to find, build, create or do?');
+						}
+					  }); */
+				  }, true);
+			</script>
+		</div>
+	  </div>
+	</div>
+</div>
+		<div id='viewport'>
+			<div class='container-main'>
+				<header>
+					<div class='navbar'>
+						<div class='super-nav'>
+							<div class='container'>
+								<ul>
+									<li class='search'>
+										<i class='fa fa-search'></i>
+										<style>
+										  .gsc-input input.gsc-input {background:#243640 !important;}
+										</style>
+										<div class='gse'>
+											<div class='gcse-search'></div>
+										</div>
+									</li>
+									<li>
+										<a href='http://blog.pivotal.io'>Blog</a>
+									</li>
+									<li>
+										<a href='http://pivotal.io/resources' id='resources-nav-link'>Resources</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class='container'>
+							<div class='menu-icon mobile-only'>
+								<div class='menu-bar'></div>
+								<div class='menu-bar'></div>
+								<div class='menu-bar'></div>
+							</div>
+							<div class='pivotal-logo'>
+								<a href='http://pivotal.io/'></a>
+							</div>
+							<ul class='nav'>
+								<li id='cloud-nav-link'><a href='http://pivotal.io/platform'>Platform</a></li>
+								<li id='data-nav-link'><a href='http://pivotal.io/big-data/pivotal-big-data-suite'>Data</a></li>
+								<li id='pivotal_labs-nav-link'><a href='http://pivotal.io/labs'>Labs</a></li>
+								<li id='customers-nav-link'><a href='http://pivotal.io/customers'>Customers</a></li>
+								<li id='news_events-nav-link'><a href='http://pivotal.io/news-events'>News &amp; Events</a></li>
+								<li id='about-nav-link'><a href='http://pivotal.io/about'>About</a></li>
+							</ul>
+							<ul id="channels-nav-link" class="nav-menu" style="display: none;">
+								<div class="arrow-up"></div>
+								<div class="inner-menu">
+									<a href='http://blog.pivotal.io'>POV Home</a>
+									<a href="http://blog.pivotal.io/big-data-pivotal">Big Data</a><a href="http://blog.pivotal.io/data-science-pivotal">Data Science</a><a href="http://blog.pivotal.io/pivotal-cloud-foundry">Pivotal Cloud Foundry</a><a href="http://blog.pivotal.io/pivotal-labs">Pivotal Labs</a><a href="http://blog.pivotal.io/podcasts-pivotal">Podcasts</a>								</div>
+							</ul>
+							<div class='cta empty'>
+								<a id='contactpopuplink'>Contact</a>
+							</div>
+						</div>
+					</div>
+				</header>
+
+
+<div class='secondary-nav secondary-nav-alt'>
+
+	<div class='container'>
+	<ul>
+		<li>
+			<a href='http://blog.pivotal.io'>POV Home</a>
+		</li>
+		<li><a href="http://blog.pivotal.io/big-data-pivotal">Big Data</a></li><li><a href="http://blog.pivotal.io/data-science-pivotal">Data Science</a></li><li><a href="http://blog.pivotal.io/pivotal-cloud-foundry">Pivotal Cloud Foundry</a></li><li><a href="http://blog.pivotal.io/pivotal-labs">Pivotal Labs</a></li><li><a href="http://blog.pivotal.io/podcasts-pivotal">Podcasts</a></li>	</ul>
+</div>
+</div><!-- /secondary nav -->
+
+<div class='content clear'>
+	<div class='container'>
+
+		<div class="single-outer">
+
+			
+					
+					<div id="post-18974">
+						<div class="post-channel labs-identifier">
+															LABS													</div>
+
+						<div class="h1 post-title">Rails autoloading for your gem</div>
+						<p class="post-meta">May 29, 2013  &#8226; By <a href="http://blog.pivotal.io/author/shagemann">Stephan Hagemann</a>  &#8226; <a href="http://blog.pivotal.io/category/labs" rel="category tag">Labs</a></p>
+						<div class="tag-list"><span><a href="http://blog.pivotal.io/tag/cbra" rel="tag">cbra</a></span><span><a href="http://blog.pivotal.io/tag/cobra" rel="tag">cobra</a></span><span><a href="http://blog.pivotal.io/tag/engines" rel="tag">engines</a></span><span><a href="http://blog.pivotal.io/tag/gemfire" rel="tag">GemFire</a></span><span><a href="http://blog.pivotal.io/tag/rails" rel="tag">rails</a></span></div>
+
+						<div class="single-inner">
+
+							<div class="post-18974 post type-post status-publish format-standard has-post-thumbnail hentry category-labs tag-cbra tag-cobra tag-engines tag-gemfire tag-rails channel-labs channel-pivotal-labs">
+								<p>We have been developing gems a lot as part of giving more structure to Rails applications: <a href="http://blog.pivotal.io/unbuilt-rails-dependencies-how-to-design-for-loosely-coupled-highly-cohesive-components-within-a-rails-application/">the idea</a> and <a href="http://blog.pivotal.io/migrating-from-a-single-rails-app-to-a-suite-of-rails-engines/">some techniques</a>. Doing this often sees a Rails application and one or more gems being developed at the same time. This unfortunately breaks Rails autoloading. This article will show you how to get it back&#8230;</p>
+<p><span id="more-18974"></span></p>
+<p>Gems usually require their files from their root file. This makes Ruby load all necessary classes which makes them unavailable to Rails autoloading. Thus, whenever the gem changes the server needs to be restarted. Making the gem an engine, will allow for autoloading, but can add a lot of extra dependencies. The technique shown here will make the gem &#8220;progressively enhanceable&#8221; such that it can be autoloaded when used within a Rails application without adding any additional dependencies to the gem itself.</p>
+<h2>Progressively enhance your gem to be an engine</h2>
+<p>Let this be our gem</p>
+<pre><code>#/lib/our_gem.rb
+module OurGem
+  require 'our_gem/difficult_stuff'
+end
+</code></pre>
+<p>Autoloading in a Rails application will &#8220;just work&#8221; if this code is changed to the following. Be sure to add the engine class and to only require it when Rails is available.</p>
+<pre><code>#/lib/our_gem.rb
+module OurGem
+  if defined?(Rails)
+    require 'our_gem/engine'
+  else
+    require 'our_gem/difficult_stuff'
+  end
+end
+
+#/lib/our_gem/engine.rb
+module OurGem
+  class Engine < ::Rails::Engine
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+  end
+end
+</code></pre>
+<p>I have a sample <a href="https://github.com/shageman/the_next_big_thing" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'https://github.com/shageman/the_next_big_thing', 'component-based Rails application']);" >component-based Rails application</a> in which you can see this technique at work in <a href="https://github.com/shageman/the_next_big_thing/commit/a283ca08596fb1fa806c3f91cfe28ae40685becf" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'https://github.com/shageman/the_next_big_thing/commit/a283ca08596fb1fa806c3f91cfe28ae40685becf', 'this commit']);" >this commit</a>.</p>
+<h2>Other possibilities</h2>
+<p>I previously thought that other approaches to this problem should work as well: Rails' `autoload` method, setting autoload_paths and eager_load_paths properly in the main app, or require_dependency. So far I have not had success with these approaches. I would love to hear about how to make these work!</p>
+<p class="no-break"><span class='st_facebook_large' st_title='Rails autoloading for your gem' st_url='http://blog.pivotal.io/labs/labs/rails-autoloading-for-your-gem'></span><span class='st_twitter_large' st_title='Rails autoloading for your gem' st_url='http://blog.pivotal.io/labs/labs/rails-autoloading-for-your-gem'></span><span class='st_email_large' st_title='Rails autoloading for your gem' st_url='http://blog.pivotal.io/labs/labs/rails-autoloading-for-your-gem'></span><span class='st_plusone_large' st_title='Rails autoloading for your gem' st_url='http://blog.pivotal.io/labs/labs/rails-autoloading-for-your-gem'></span><span class='st_linkedin_large' st_title='Rails autoloading for your gem' st_url='http://blog.pivotal.io/labs/labs/rails-autoloading-for-your-gem'></span></p>							</div>
+
+							
+							<div class="post-author">
+								<div class="gravatar"><img src="http://0.gravatar.com/avatar/0ca69cc806dd79e5ad6ab2349d3152a7?s=100&#038;d=mm&#038;r=g" width="100" height="100" alt="" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 photo avatar-default" /></div>
+								<div class="post-author-text">
+									<div class="h4">Posted by <a href="http://blog.pivotal.io/author/shagemann">Stephan Hagemann</a></div>
+									<p></p>
+								</div>
+							</div>
+						</div><!-- /single inner -->
+
+					</div><!-- post -->
+
+					
+<!-- You can start editing here. -->
+<div class="comments-box">
+	<div class="h2">Comments</div>
+
+	<div class="comments-pad">	
+					
+			<!-- If comments are open, but there are no comments. -->
+
+					
+		
+			<div id="respond">
+				<div class="h2">Post a Comment</div>
+
+				<div class="cancel-comment-reply alignright">
+					<a rel="nofollow" id="cancel-comment-reply-link" href="/labs/labs/rails-autoloading-for-your-gem#respond" style="display:none;">Cancel Reply</a>				</div>
+
+				
+					<form action="http://blog.pivotal.io/wp-comments-post.php" method="post" id="commentform">
+						<p><textarea name="comment" id="comment" tabindex="4"></textarea></p>
+													<p class="small"><strong class="dark">Your Information</strong>   (Name required. Email address will not be displayed with comment.)</p>
+							<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' placeholder="Name" />
+							<label for="author"><small>Name (required)</small></label></p>
+	
+							<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true' placeholder="Email Address" />
+							<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+	
+							<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" placeholder="Website URL" />
+							<label for="url"><small>Website</small></label></p>
+							
+							<!-- spam-free-wordpress password field -->
+							<div class="sfw-fields">
+								<!-- 296,742 Spam Comments Blocked so far by Spam Free Wordpress version 2.2.4 located at https://www.toddlahman.com/shop/simple-comments/ -->
+<p><input type='text' value='2Q5OMLHMjJSh' onclick='this.select()' size='20' />
+		<b>* Copy This Password *</b></p><p><input type='text' name='passthis' id='passthis' value='' size='20' />
+		<b>* Type Or Paste Password Here *</b></p>							</div>
+	
+							
+	
+					<p><input name="submit" type="submit" id="submit" tabindex="5" value="Post" /><input type='hidden' name='comment_post_ID' value='18974' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+					<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fa446b0173" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="207"/></p>				</form>
+	
+							</div> <!-- respond -->
+			</div> <!-- .comments-pad -->
+</div> <!-- .comments-box -->
+				
+		</div><!-- /outer -->
+
+	</div>
+</div><!-- /content -->
+
+			</div><!--end of container-main-->
+		</div><!--end of viewport-->
+		<div class="bottomgradient"></div>
+		<div id="footer">
+			<div class="container">
+				<div class="twentywide sidebyside">
+					<ul class="footer-nav">
+						<li>
+							<h3>
+								<a href="//pivotal.io/platform">Platform</a>
+								<ul class="footer-nav-menu">
+									<li>
+										<a href="//pivotal.io/platform">
+											Cloud Native Platform
+										</a>
+									</li>
+								</ul>
+							</h3>
+						</li>
+						<li>
+							<h3>
+								<a href="//pivotal.io/big-data/pivotal-big-data-suite">Data</a>
+								<ul class="footer-nav-menu">
+									<li>
+										<a href="//pivotal.io/big-data/pivotal-big-data-suite">
+											Pivotal Big Data Suite
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/big-data/pivotal-gemfire">
+											Pivotal GemFire
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/big-data/pivotal-greenplum-database">
+											Pivotal Greenplum Database
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/big-data/pivotal-hd">
+											Pivotal HD
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/big-data/pivotal-hawq">
+											Pivotal HAWQ
+										</a>
+									</li>
+								</ul>
+							</h3>
+						</li>
+						<li>
+							<h3>
+								<a href="https://network.pivotal.io/" target="_self">Downloads</a>
+							</h3>
+						</li>
+						<li>
+							<h3>
+								<a href="http://docs.pivotal.io/" target="_self">Documentation</a>
+							</h3>
+						</li>
+						<li>
+							<h3>
+								<a href="https://support.pivotal.io/hc/en-us" target="_self">Support</a>
+							</h3>
+						</li>
+					</ul>
+				</div>
+				<div class="twentywide sidebyside">
+					<ul class="footer-nav">
+						<li>
+							<h3>
+								<a href="//pivotal.io/labs">Labs</a>
+							</h3>
+						</li>
+						<li>
+							<h3>
+								<a href="//pivotal.io/customers">Customers</a>
+								<ul class="footer-nav-menu">
+									<li>
+										<a href="//pivotal.io/customers">
+											Show All Customers
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/axelspringer">
+											Axel Springer
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/bakrie">
+											Bakrie Telecom
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/citic">
+											China CITIC Bank
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/corelogic">
+											CoreLogic
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/hulu">
+											Hulu
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/indianrailways">
+											Indian Railways
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/philips">
+											Philips
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/southwest">
+											Southwest Airlines
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/tranquilidade">
+											Tranquilidade
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/wgsn">
+											WGSN Group
+										</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/customers/zions">
+											Zions Bancorporation
+										</a>
+									</li>
+
+								</ul>
+							</h3>
+						</li>
+						<li>
+							<a href="//pivotal.io/news-events">News &amp; Events</a>
+						</li>
+					</ul>
+				</div>
+				<div class="twentywide sidebyside">
+					<ul class="footer-nav">
+						<li>
+							<h3>
+								<a href="//pivotal.io/about">About</a>
+								<ul class="footer-nav-menu">
+									<li>
+										<a href="//pivotal.io/about">Company</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/team">Executive Team</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/press-center">Press Center</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/partners">Partners</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/careers">Careers</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/resources">Resources</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/oss">OSS</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/training">Training</a>
+									</li>
+									<li>
+										<a href="//pivotal.io/contact">Contact</a>
+									</li>
+
+								</ul>
+							</h3>
+						</li>
+						<p>
+							<a href="//pivotal.io/privacy-policy">Privacy and Cookie Policy</a>
+							<br>
+							<a href="//pivotal.io/terms-of-use">Terms of Use</a>
+							<br>
+							<a href="//pivotal.io/product-guide">Product Guide</a>
+							<br>
+							<a href="//pivotal.io/open-source">Open Source Disclosure Information</a>
+							<br>
+							<a href="//pivotal.io/open-source-indemnification-program">Open Source Indemnification Program</a>
+						</p>
+					</ul>
+				</div>
+				<div class="twentywide sidebyside">
+					<div class="white-round-box">
+						<i class="fa fa-at"></i>
+						<div class="h4">Contact Pivotal</div>
+						<ul>
+							<li>
+								<a href="//pivotal.io/contact">Sales</a>
+							</li>
+							<li>
+								<a href="//pivotal.io/contact">Information</a>
+							</li>
+							<li>
+								<a href="//pivotal.io/contact">Questions</a>
+							</li>
+						</ul>
+					</div>
+					<div class="white-round-box">
+						<i class="fa fa-support"></i>
+						<div class="h4">Pivotal Support</div>
+						<ul>
+							<li>
+								<a href="https://support.pivotal.io/hc/en-us" target="_self">Help &amp; Support</a>
+							</li>
+							<li>
+								<a href="//pivotal.io/training">Training</a>
+							</li>
+						</ul>
+					</div>
+					<div class="social-icons">
+						<a href="https://plus.google.com/105320112436428794490/posts" target="_blank">
+							<i class="fa fa-google-plus"></i>
+						</a>
+						<a href="https://www.linkedin.com/company/3048967" target="_blank">
+							<i class="fa fa-linkedin"></i>
+						</a>
+						<a href="https://twitter.com/pivotal" target="_blank">
+							<i class="fa fa-twitter"></i>
+						</a>
+						<a href="https://www.youtube.com/user/goPivotal" target="_blank">
+							<i class="fa fa-youtube-play"></i>
+						</a>
+						<a href="https://www.facebook.com/pivotalsoftware" target="_blank">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="container">
+					© Copyright
+					<script>
+					  var d = new Date();
+					  document.write(d.getFullYear());
+					</script>
+					Pivotal Software, Inc.
+					All Rights Reserved.
+					<div class="flags">
+
+<a href="//pivotal.io/cn">
+<img src="https://d1fto35gcfffzn.cloudfront.net/images/icons/CN.png">
+</a>
+<a href="//pivotal.io/de">
+<img src="https://d1fto35gcfffzn.cloudfront.net/images/icons/DE.png">
+</a>
+<a href="//pivotal.io/fr">
+<img src="https://d1fto35gcfffzn.cloudfront.net/images/icons/FR.png">
+</a>
+<a href="//pivotal.io/jp">
+<img src="https://d1fto35gcfffzn.cloudfront.net/images/icons/JP.png">
+</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Crazy Egg-->
+		<script type="text/javascript">
+			setTimeout(function () {
+				var a = document.createElement("script");
+				var b = document.getElementsByTagName("script")[0];
+				a.src = document.location.protocol + "//dnn506yrbagrg.cloudfront.net/pages/scripts/0020/8294.js?" + Math.floor(new Date().getTime() / 3600000);
+				a.async = true;
+				a.type = "text/javascript";
+				b.parentNode.insertBefore(a, b)
+			}, 1);
+		</script>
+
+		<script async src='https://d1fto35gcfffzn.cloudfront.net/googlesearch/en.js' type='text/javascript'></script>
+
+		<!-- Twitter -->
+		<script type="text/javascript" src="//platform.twitter.com/oct.js" ></script>
+		<script type="text/javascript">twttr.conversion.trackPid('l4umn');</script>
+
+		<noscript>
+			<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l4umn&p_id=Twitter" />
+			<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l4umn&p_id=Twitter" />
+		</noscript>
+
+		<!-- LinkedIn -->
+		<noscript>
+			<img alt='' height='1' src='//www.bizographics.com/collect/?pid=7468&amp;fmt=gif' style='display:none;' width='1'>
+		</noscript>
+
+		<div class='twitterconfirmation'></div>
+
+		<script type='text/javascript' src='http://blog.pivotal.io/wp-content/plugins/akismet/_inc/form.js?ver=3.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var gopo_i18n = {"banner_name":"http:\/\/blog.pivotal.io\/wp-content\/themes\/pivotal2015\/_media\/Blog_Header_LabsAtPivotal.png","attributes":{"background":"#005962"},"pre_css":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-content/themes/pivotal2015/external/channels.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-content/themes/pivotal2015/_js/single.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-content/themes/pivotal2015/_js/search.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-content/themes/pivotal2015/external/jquery.lazyload.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-content/themes/pivotal2015/external/jquery.fancybox.pack.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-content/themes/pivotal2015/external/jquery.matchHeight-min.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-content/themes/pivotal2015/external/master.js?ver=2.2.1'></script>
+<script type='text/javascript' src='http://blog.pivotal.io/wp-content/themes/pivotal2015/_js/general.js?ver=2.2.1'></script>
+<script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+
+	</body>
+</html>
